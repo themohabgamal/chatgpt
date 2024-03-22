@@ -13,8 +13,9 @@ class _ChatScreenState extends State<ChatScreen> {
   final _user = ChatUser(id: '1', firstName: 'Mohab');
   final _bot = ChatUser(id: '2', firstName: 'Broxi');
   List<ChatMessage> messages = [];
-  final _chatGpt = OpenAI.instance
-      .build(baseOption: HttpSetup(receiveTimeout: const Duration(seconds: 5)));
+  final _chatGpt = OpenAI.instance.build(
+      token: 'your api token',
+      baseOption: HttpSetup(receiveTimeout: const Duration(seconds: 5)));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
